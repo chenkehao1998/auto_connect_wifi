@@ -57,3 +57,6 @@ netsh interface set interface "接口名称" enabled
 2. 重启服务 `auto_connect_wifi.exe restart`
 3. 查看服务状态 `auto_connect_wifi.exe status`
 4. 卸载服务 `auto_connect_wifi.exe uninstall`
+
+## 致谢
+感谢在此项目诞生前，频繁帮我给电脑联网的同学们！
