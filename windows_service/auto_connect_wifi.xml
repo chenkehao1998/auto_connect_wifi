@@ -1,0 +1,16 @@
+<service>
+  
+  <id>auto_connect_wifi</id>
+  <!-- 服务名称e -->
+  <name>auto_connect_wifi</name>
+  <!-- 服务描述 -->
+  <description>auto connect wifi</description>
+  
+  <!-- 执行命令-->
+  <executable>java</executable>
+  <arguments>-jar auto_connect_wifi.jar</arguments>
+
+   <!-- 开机启动 -->
+   <startmode>Automatic</startmode>
+
+</service>
