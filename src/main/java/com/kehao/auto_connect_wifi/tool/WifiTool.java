@@ -25,15 +25,12 @@ public class WifiTool {
         List<WifiHotspotEntity> wifiHotspotEntityList = new ArrayList<>();
         if(cmdResultArray.length>=1){
             for (int i = 1; i < cmdResultArray.length; i++) {
-                Map<String, String> wifiMap = null;
-                try {
-                    wifiMap = Arrays.stream(cmdResultArray[i].trim().split("\r\n"))
+                Map<String, String> wifiMap =
+                      Arrays.stream(cmdResultArray[i].trim().split("\r\n"))
                             .filter(str -> str.contains(":"))
                             .map(str -> str.split(":"))
                             .collect(Collectors.toMap(arr -> arr[0].trim(), arr -> arr[1].trim(),(v1,v2)->v1));
-                }catch (Exception e){
-                    System.out.println();
-                }
+
                 String wifiName = wifiMap.get("SSID "+i);
                 String signalStrengthStr = wifiMap.get("信号");
                 int signalStrength = Integer.parseInt(signalStrengthStr.replace("%",""));
