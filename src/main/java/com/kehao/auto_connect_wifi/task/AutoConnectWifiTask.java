@@ -39,12 +39,17 @@ public class AutoConnectWifiTask {
             if (profiles.contains(wifiName)) {
                 if (wifiTool.connectToHotspot(wifiName)) {
                     //网络连接成功
-                    log.info("wifi连接成功：{}",wifiName);
-                    return;
+                    if(wifiTool.networkConnected()){
+                        log.info("wifi连接成功：{}",wifiName);
+                        return;
+                    }else {
+                        log.info("wifi连接成功：{},但是没有网络",wifiName);
+                    }
                 }else {
                     log.info("连接{}失败",wifiName);
                 }
             }
         }
+        log.info("已尝试所有wifi,但均未成功联网");
     }
 }
